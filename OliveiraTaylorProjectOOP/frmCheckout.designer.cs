@@ -1,6 +1,6 @@
 ﻿namespace OliveiraTaylorOOPFinalProject
 {
-    partial class Checkout
+    partial class frmCheckout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Checkout));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckout));
             this.lstOrdersInCart = new System.Windows.Forms.ListBox();
             this.grpConfirmOrder = new System.Windows.Forms.GroupBox();
             this.txtCreditNum = new System.Windows.Forms.TextBox();

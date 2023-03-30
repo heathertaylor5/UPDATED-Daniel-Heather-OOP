@@ -1,6 +1,6 @@
 ﻿namespace OliveiraTaylorOOPFinalProject
 {
-    partial class Order
+    partial class frmOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrder));
             this.lstInventory = new System.Windows.Forms.ListBox();
             this.lstCart = new System.Windows.Forms.ListBox();
             this.grpCart = new System.Windows.Forms.GroupBox();

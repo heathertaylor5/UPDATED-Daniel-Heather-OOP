@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OliveiraTaylorProjectOOP;
+using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,9 +13,9 @@ using System.Windows.Forms;
 
 namespace OliveiraTaylorOOPFinalProject
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -77,7 +78,7 @@ namespace OliveiraTaylorOOPFinalProject
                 if(login)
                 {
                     //Open ProductMaintaince
-                    ProductMaintenance product = new ProductMaintenance();
+                    frmProductMaintenance product = new frmProductMaintenance();
                     product.ShowDialog();
                 }
                 else
@@ -94,7 +95,7 @@ namespace OliveiraTaylorOOPFinalProject
                 if(login)
                 {
                     //Open Order form
-                    Order order = new Order();
+                    frmOrder order = new frmOrder();
                     order.ShowDialog();
                 }
                 else

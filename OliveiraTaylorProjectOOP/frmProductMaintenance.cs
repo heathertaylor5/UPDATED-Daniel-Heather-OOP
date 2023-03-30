@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OliveiraTaylorOOPFinalProject
 {
-    public partial class ProductMaintenance : Form
+    public partial class frmProductMaintenance : Form
     {
-        public ProductMaintenance()
+        public frmProductMaintenance()
         {
             InitializeComponent();
         }

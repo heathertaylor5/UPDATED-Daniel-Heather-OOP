@@ -1,6 +1,6 @@
 ﻿namespace OliveiraTaylorOOPFinalProject
 {
-    partial class ProductMaintenance
+    partial class frmProductMaintenance
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductMaintenance));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductMaintenance));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lstAllProducts = new System.Windows.Forms.ListBox();
             this.btnAddNewItem = new System.Windows.Forms.Button();

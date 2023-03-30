@@ -11,9 +11,9 @@ using System.Windows.Forms;
 namespace OliveiraTaylorOOPFinalProject
 {
     //HIDE GRPPRODUCTINFO until either radio button in checked
-    public partial class AddItem : Form
+    public partial class frmAddItem : Form
     {
-        public AddItem()
+        public frmAddItem()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace OliveiraTaylorOOPFinalProject
 {
-    partial class AddItem
+    partial class frmAddItem
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddItem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddItem));
             this.grpProductType = new System.Windows.Forms.GroupBox();
             this.btnSelectType = new System.Windows.Forms.Button();
             this.radPhoto = new System.Windows.Forms.RadioButton();

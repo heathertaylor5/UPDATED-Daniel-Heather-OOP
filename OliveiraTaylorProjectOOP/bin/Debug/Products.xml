@@ -4,70 +4,70 @@
 		<Code>PA123</Code>
 		<Description>Ducks Painting</Description>
 		<Price>123.89</Price>
-		<Original>true</Original>
-		<Framed>true</Framed>
+		<Original>True</Original>
+		<Framed>True</Framed>
 	</Painting>
 	<Painting>
 		<Code>PA234</Code>
 		<Description>Cat Painting</Description>
 		<Price>480.00</Price>
-		<Original>false</Original>
-		<Framed>true</Framed>
+		<Original>False</Original>
+		<Framed>True</Framed>
 	</Painting>
 	<Painting>
 		<Code>PA345</Code>
 		<Description>Fish Painting</Description>
 		<Price>68.00</Price>
-		<Original>true</Original>
-		<Framed>false</Framed>
+		<Original>True</Original>
+		<Framed>False</Framed>
 	</Painting>
 	<Painting>
 		<Code>PA456</Code>
 		<Description>Owl Painting</Description>
 		<Price>110.00</Price>
-		<Original>false</Original>
-		<Framed>true</Framed>
+		<Original>False</Original>
+		<Framed>True</Framed>
 	</Painting>
 	<Painting>
 		<Code>PA567</Code>
 		<Description>Wizard Painting</Description>
 		<Price>280.00</Price>
-		<Original>true</Original>
-		<Framed>false</Framed>
+		<Original>True</Original>
+		<Framed>False</Framed>
 	</Painting>
 	<Photo>
 		<Code>PH123</Code>
 		<Description>Flower Photo</Description>
 		<Price>40.00</Price>
-		<Digital>false</Digital>
-		<Colour>true</Colour>
+		<Digital>False</Digital>
+		<Colour>True</Colour>
 	</Photo>
 	<Photo>
 		<Code>PH234</Code>
 		<Description>Waterfall Photo</Description>
 		<Price>26.98</Price>
-		<Digital>false</Digital>
-		<Colour>true</Colour>
+		<Digital>False</Digital>
+		<Colour>True</Colour>
 	</Photo>
 	<Photo>
 		<Code>PH345</Code>
 		<Description>Clown Photo</Description>
 		<Price>1.00</Price>
-		<Digital>false</Digital>
-		<Colour>false</Colour>
+		<Digital>False</Digital>
+		<Colour>False</Colour>
 	</Photo>
 	<Photo>
 		<Code>PH456</Code>
 		<Description>Ballet Photo</Description>
 		<Price>112.88</Price>
-		<Digital>true</Digital>
-		<Colour>false</Colour>
+		<Digital>True</Digital>
+		<Colour>False</Colour>
 	</Photo>
 	<Photo>
 		<Code>PH567</Code>
 		<Description>Cat Photo</Description>
 		<Price>999.99</Price>
-		<Digital>false</Digital>
-		<Colour>true</Colour>
+		<Digital>False</Digital>
+		<Colour>True</Colour>
 	</Photo>
 </Products>

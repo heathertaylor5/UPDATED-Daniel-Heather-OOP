@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OliveiraTaylorOOPFinalProject
 {
-    public partial class Checkout : Form
+    public partial class frmCheckout : Form
     {
-        public Checkout()
+        public frmCheckout()
         {
             InitializeComponent();
         }
