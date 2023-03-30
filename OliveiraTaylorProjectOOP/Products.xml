@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+	<Product>
+		<Code>PA123</Code>
+		<Description>Ducks Painting</Description>
+		<Price>123.89</Price>
+		<Original>True</Original>
+		<Frame>True</Frame>
+	</Product>
+	<Product>
+		<Code>PA234</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PA345</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PA456</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PA567</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PH123</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PH234</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PH345</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PH456</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+	<Product>
+		<Code>PH567</Code>
+		<Description></Description>
+		<Price></Price>
+	</Product>
+</Products>
