@@ -37,20 +37,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpInventory = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.grpPaintings = new System.Windows.Forms.GroupBox();
             this.grpCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.grpPaintings.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstInventory
             // 
             this.lstInventory.FormattingEnabled = true;
             this.lstInventory.ItemHeight = 16;
-            this.lstInventory.Location = new System.Drawing.Point(5, 177);
+            this.lstInventory.Location = new System.Drawing.Point(5, 209);
             this.lstInventory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lstInventory.Name = "lstInventory";
-            this.lstInventory.Size = new System.Drawing.Size(559, 164);
+            this.lstInventory.Size = new System.Drawing.Size(559, 132);
             this.lstInventory.TabIndex = 0;
             // 
             // lstCart
@@ -100,17 +104,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(5, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 20);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(559, 138);
+            this.pictureBox1.Size = new System.Drawing.Size(155, 139);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // grpInventory
             // 
-            this.grpInventory.Controls.Add(this.pictureBox1);
+            this.grpInventory.Controls.Add(this.grpPaintings);
+            this.grpInventory.Controls.Add(this.label2);
+            this.grpInventory.Controls.Add(this.label1);
             this.grpInventory.Controls.Add(this.btnAddToOrder);
             this.grpInventory.Controls.Add(this.lstInventory);
             this.grpInventory.Location = new System.Drawing.Point(13, 14);
@@ -133,7 +139,35 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // Order
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Product Code";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(519, 188);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Price";
+            // 
+            // grpPaintings
+            // 
+            this.grpPaintings.Controls.Add(this.pictureBox1);
+            this.grpPaintings.Location = new System.Drawing.Point(10, 21);
+            this.grpPaintings.Name = "grpPaintings";
+            this.grpPaintings.Size = new System.Drawing.Size(547, 164);
+            this.grpPaintings.TabIndex = 7;
+            this.grpPaintings.TabStop = false;
+            this.grpPaintings.Text = "Paintings Images";
+            // 
+            // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,14 +176,16 @@
             this.Controls.Add(this.grpInventory);
             this.Controls.Add(this.grpCart);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Order";
+            this.Name = "frmOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
             this.Load += new System.EventHandler(this.Order_Load);
             this.grpCart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grpInventory.ResumeLayout(false);
+            this.grpInventory.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.grpPaintings.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -164,5 +200,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox grpInventory;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox grpPaintings;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
