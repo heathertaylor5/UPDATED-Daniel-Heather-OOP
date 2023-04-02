@@ -21,8 +21,8 @@ namespace OliveiraTaylorOOPFinalProject
         }
 
         //Declare global lists for Admins and Customers
-        List<User> users = new List<User>();
-        //Create a class-level list of products
+        public static List<User> users = new List<User>();
+        //Create List of products to be accessed from all other forms
         public static List<Product> products = ProductDB.GetProducts();
 
         private void Login_Load(object sender, EventArgs e)

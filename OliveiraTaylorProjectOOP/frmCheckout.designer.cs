@@ -31,8 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCheckout));
             this.lstOrdersInCart = new System.Windows.Forms.ListBox();
             this.grpConfirmOrder = new System.Windows.Forms.GroupBox();
-            this.txtCreditNum = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtCardNum = new System.Windows.Forms.TextBox();
+            this.lblCardNum = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnConfirmOrder = new System.Windows.Forms.Button();
             this.cboPaymentMethod = new System.Windows.Forms.ComboBox();
@@ -49,9 +51,7 @@
             this.lblStreetNum = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblCustomerName = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.sfdOrderReceipt = new System.Windows.Forms.SaveFileDialog();
             this.grpConfirmOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grpProfile.SuspendLayout();
@@ -71,8 +71,8 @@
             // 
             this.grpConfirmOrder.Controls.Add(this.label5);
             this.grpConfirmOrder.Controls.Add(this.lblTotal);
-            this.grpConfirmOrder.Controls.Add(this.txtCreditNum);
-            this.grpConfirmOrder.Controls.Add(this.label3);
+            this.grpConfirmOrder.Controls.Add(this.txtCardNum);
+            this.grpConfirmOrder.Controls.Add(this.lblCardNum);
             this.grpConfirmOrder.Controls.Add(this.btnBack);
             this.grpConfirmOrder.Controls.Add(this.btnConfirmOrder);
             this.grpConfirmOrder.Controls.Add(this.cboPaymentMethod);
@@ -88,32 +88,56 @@
             this.grpConfirmOrder.TabStop = false;
             this.grpConfirmOrder.Text = "Your Order";
             // 
-            // txtCreditNum
+            // label5
             // 
-            this.txtCreditNum.Location = new System.Drawing.Point(215, 299);
-            this.txtCreditNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCreditNum.Name = "txtCreditNum";
-            this.txtCreditNum.Size = new System.Drawing.Size(247, 22);
-            this.txtCreditNum.TabIndex = 7;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(276, 216);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Order Total:";
             // 
-            // label3
+            // lblTotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(84, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Last 4 digits of card:";
+            this.lblTotal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTotal.Location = new System.Drawing.Point(360, 215);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(102, 31);
+            this.lblTotal.TabIndex = 8;
+            this.lblTotal.Text = "label5";
+            // 
+            // txtCardNum
+            // 
+            this.txtCardNum.Location = new System.Drawing.Point(235, 299);
+            this.txtCardNum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCardNum.MaxLength = 4;
+            this.txtCardNum.Name = "txtCardNum";
+            this.txtCardNum.Size = new System.Drawing.Size(227, 22);
+            this.txtCardNum.TabIndex = 7;
+            this.txtCardNum.Visible = false;
+            // 
+            // lblCardNum
+            // 
+            this.lblCardNum.AutoSize = true;
+            this.lblCardNum.Location = new System.Drawing.Point(84, 299);
+            this.lblCardNum.Name = "lblCardNum";
+            this.lblCardNum.Size = new System.Drawing.Size(124, 16);
+            this.lblCardNum.TabIndex = 6;
+            this.lblCardNum.Text = "Last 4 digits of card:";
+            this.lblCardNum.Visible = false;
             // 
             // btnBack
             // 
+            this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBack.Location = new System.Drawing.Point(84, 348);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(85, 57);
             this.btnBack.TabIndex = 5;
-            this.btnBack.Text = "Back to Store";
+            this.btnBack.Text = "&Back to Store";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnConfirmOrder
             // 
@@ -122,17 +146,26 @@
             this.btnConfirmOrder.Name = "btnConfirmOrder";
             this.btnConfirmOrder.Size = new System.Drawing.Size(85, 57);
             this.btnConfirmOrder.TabIndex = 4;
-            this.btnConfirmOrder.Text = "Confirm Order";
+            this.btnConfirmOrder.Text = "&Confirm Order";
             this.btnConfirmOrder.UseVisualStyleBackColor = true;
+            this.btnConfirmOrder.Click += new System.EventHandler(this.btnConfirmOrder_Click);
             // 
             // cboPaymentMethod
             // 
+            this.cboPaymentMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPaymentMethod.FormattingEnabled = true;
-            this.cboPaymentMethod.Location = new System.Drawing.Point(215, 263);
+            this.cboPaymentMethod.Items.AddRange(new object[] {
+            "Visa",
+            "MasterCard",
+            "AMEX",
+            "Cheque",
+            "Cash"});
+            this.cboPaymentMethod.Location = new System.Drawing.Point(235, 263);
             this.cboPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPaymentMethod.Name = "cboPaymentMethod";
-            this.cboPaymentMethod.Size = new System.Drawing.Size(247, 24);
+            this.cboPaymentMethod.Size = new System.Drawing.Size(227, 24);
             this.cboPaymentMethod.TabIndex = 3;
+            this.cboPaymentMethod.SelectedIndexChanged += new System.EventHandler(this.cboPaymentMethod_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -268,35 +301,25 @@
             this.lblCustomerName.TabIndex = 0;
             this.lblCustomerName.Text = "CustomerName";
             // 
-            // lblTotal
+            // sfdOrderReceipt
             // 
-            this.lblTotal.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTotal.Location = new System.Drawing.Point(360, 215);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(102, 31);
-            this.lblTotal.TabIndex = 8;
-            this.lblTotal.Text = "label5";
+            this.sfdOrderReceipt.DefaultExt = "txt";
+            this.sfdOrderReceipt.FileName = "TaylorOliveiraReceipt.txt";
+            this.sfdOrderReceipt.InitialDirectory = "c:\\files";
+            this.sfdOrderReceipt.Title = "Confirm Order";
             // 
-            // label5
+            // frmCheckout
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(276, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Order Total:";
-            // 
-            // Checkout
-            // 
+            this.AcceptButton = this.btnConfirmOrder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grpProfile);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpConfirmOrder);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Checkout";
+            this.Name = "frmCheckout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checkout";
             this.Load += new System.EventHandler(this.Checkout_Load);
@@ -314,8 +337,8 @@
         private System.Windows.Forms.ListBox lstOrdersInCart;
         private System.Windows.Forms.GroupBox grpConfirmOrder;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtCreditNum;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCardNum;
+        private System.Windows.Forms.Label lblCardNum;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnConfirmOrder;
         private System.Windows.Forms.ComboBox cboPaymentMethod;
@@ -331,7 +354,7 @@
         private System.Windows.Forms.Label lblStreetName;
         private System.Windows.Forms.Label lblStreetNum;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog sfdOrderReceipt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTotal;
     }

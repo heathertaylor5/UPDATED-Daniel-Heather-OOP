@@ -40,7 +40,7 @@ namespace OliveiraTaylorOOPFinalProject
          *Returned: String
          *This method displays product information in the format for the cart*/
         public string DisplayCart()
-            => String.Format("{0,-25}{1,6:c}", Description, Price);
+            => String.Format("{0,-25}{1,6:c}", Code, Price);
         //Operator Overloading
 
         //Mathmatical Operators

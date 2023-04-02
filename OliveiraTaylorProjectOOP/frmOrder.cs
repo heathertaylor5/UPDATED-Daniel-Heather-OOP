@@ -17,7 +17,8 @@ namespace OliveiraTaylorOOPFinalProject
         {
             InitializeComponent();
         }
-
+        //Create order list to be accessed from all other forms
+        public static List<string> OrderList = new List<string>();
 
         private void Order_Load(object sender, EventArgs e)
         {
@@ -86,17 +87,37 @@ namespace OliveiraTaylorOOPFinalProject
             string productInfo = lstInventory.SelectedItem as string;
             string productType = productInfo.Substring(0, 2);
             
-            //Painting
+            //Photo
             if(productType == "PH")
             {
                 grpPaintings.Hide();
                 grpPhotos.Show();
             }
+            //Painting
             else if(productType == "PA")
             {
                 grpPhotos.Hide();
                 grpPaintings.Show();
             }
+        }
+
+        private void btnSubmitOrder_Click(object sender, EventArgs e)
+        {
+            //Open Checkout Form if there is something in the cart
+            if(lstCart.Items.Count > 0) 
+            {
+                foreach(string item in lstCart.Items)
+                {
+                    OrderList.Add(item);
+                }
+                frmCheckout checkout= new frmCheckout();
+                checkout.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Must have at least 1 item in cart", "Error");
+            }
+
         }
     }
 }
