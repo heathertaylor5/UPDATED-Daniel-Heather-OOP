@@ -1,73 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Products>
-	<Painting>
+	<Product>
 		<Code>PA123</Code>
 		<Description>Ducks Painting</Description>
 		<Price>123.89</Price>
 		<Original>true</Original>
 		<Framed>true</Framed>
-	</Painting>
-	<Painting>
+		<InStock>10</InStock>
+	</Product>
+	<Product>
 		<Code>PA234</Code>
 		<Description>Cat Painting</Description>
 		<Price>480.00</Price>
 		<Original>false</Original>
 		<Framed>true</Framed>
-	</Painting>
-	<Painting>
+		<InStock>1</InStock>
+	</Product>
+	<Product>
 		<Code>PA345</Code>
 		<Description>Fish Painting</Description>
 		<Price>68.00</Price>
 		<Original>true</Original>
 		<Framed>false</Framed>
-	</Painting>
-	<Painting>
+		<InStock>5</InStock>
+	</Product>
+	<Product>
 		<Code>PA456</Code>
 		<Description>Owl Painting</Description>
 		<Price>110.00</Price>
 		<Original>false</Original>
 		<Framed>true</Framed>
-	</Painting>
-	<Painting>
+		<InStock>4</InStock>
+	</Product>
+	<Product>
 		<Code>PA567</Code>
 		<Description>Wizard Painting</Description>
 		<Price>280.00</Price>
 		<Original>true</Original>
 		<Framed>false</Framed>
-	</Painting>
-	<Photo>
+		<InStock>2</InStock>
+	</Product>
+	<Product>
 		<Code>PH123</Code>
 		<Description>Flower Photo</Description>
 		<Price>40.00</Price>
 		<Digital>false</Digital>
 		<Colour>true</Colour>
-	</Photo>
-	<Photo>
+		<InStock>20</InStock>
+	</Product>
+	<Product>
 		<Code>PH234</Code>
 		<Description>Waterfall Photo</Description>
 		<Price>26.98</Price>
 		<Digital>false</Digital>
 		<Colour>true</Colour>
-	</Photo>
-	<Photo>
+		<InStock>5</InStock>
+	</Product>
+	<Product>
 		<Code>PH345</Code>
 		<Description>Clown Photo</Description>
 		<Price>1.00</Price>
 		<Digital>false</Digital>
 		<Colour>false</Colour>
-	</Photo>
-	<Photo>
+		<InStock>100</InStock>
+	</Product>
+	<Product>
 		<Code>PH456</Code>
 		<Description>Ballet Photo</Description>
 		<Price>112.88</Price>
 		<Digital>true</Digital>
 		<Colour>false</Colour>
-	</Photo>
-	<Photo>
+		<InStock>4</InStock>
+	</Product>
+	<Product>
 		<Code>PH567</Code>
 		<Description>Cat Photo</Description>
 		<Price>999.99</Price>
 		<Digital>false</Digital>
 		<Colour>true</Colour>
-	</Photo>
+		<InStock>1</InStock>
+	</Product>
 </Products>

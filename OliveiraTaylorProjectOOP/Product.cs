@@ -1,6 +1,7 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,11 +29,18 @@ namespace OliveiraTaylorOOPFinalProject
 
         //Methods
         /*Name: DisplayInfo
-         *Sent: Product
+         *Sent: None
          *Returned: String
          *This method displays product information in the specified format*/
         public virtual string DisplayInfo()
-            => String.Format("{0,-8}{1,-14}", Code, Description);
+            => String.Format("{0,-8}{1,-25}", Code, Description);
+
+        /*Name: DisplayCart
+         *Sent: None
+         *Returned: String
+         *This method displays product information in the format for the cart*/
+        public string DisplayCart()
+            => String.Format("{0,-25}{1,6:c}", Description, Price);
         //Operator Overloading
 
         //Mathmatical Operators
@@ -165,7 +173,8 @@ namespace OliveiraTaylorOOPFinalProject
          *Returned: String
          *This is overridden from the base class - adds additional information*/
         public override string DisplayInfo()
-            => base.DisplayInfo() + Digital + " " + Colour + "   " + Price;
+            => base.DisplayInfo() + String.Format("{0,-15}{1,20}{2,15:c}{3,10}",
+                ("Digital: " + Digital), ("Colour: " + Colour), Price, InStock);
     } //END PHOTO
 
     //START PAINTING CLASS
@@ -191,7 +200,8 @@ namespace OliveiraTaylorOOPFinalProject
          *Returned: String
          *This is overridden from the base class - adds additional information*/
         public override string DisplayInfo()
-            =>base.DisplayInfo() + "Orignal: " + Original + "Framed: " + Framed + "  " + Price;
-        
+            => base.DisplayInfo() + String.Format("{0,20}{1,20}{2,15:c}{3,10}",
+                ("Original: " + Original), ("Framed: " + Framed), Price, InStock);
+
     }//END PAINTING
 }

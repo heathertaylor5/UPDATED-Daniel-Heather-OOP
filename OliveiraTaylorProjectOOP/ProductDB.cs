@@ -30,37 +30,39 @@ namespace OliveiraTaylorOOPFinalProject
             XmlReader xmlIn = XmlReader.Create(Path, settings);
 
             //Read past all nodes to the first Painting node
-            if(xmlIn.ReadToDescendant("Painting"))
+            if(xmlIn.ReadToDescendant("Product"))
             {
                 //Create one Painting object for each Painting node
                 do
                 {
-                    //Create new painting object and fill data with information from xml file
-                    Painting painting = new Painting();
-                    xmlIn.ReadStartElement("Painting");
-                    painting.Code = xmlIn.ReadElementContentAsString();
-                    painting.Description = xmlIn.ReadElementContentAsString();
-                    painting.Price = xmlIn.ReadElementContentAsDecimal();
-                    painting.Original = xmlIn.ReadElementContentAsBoolean();
-                    painting.Framed = xmlIn.ReadElementContentAsBoolean();
-                    products.Add(painting);
+                    //Create new painting object and fill data with information from xml file 
+                    xmlIn.ReadStartElement("Product");
+                    string code = xmlIn.ReadElementContentAsString();
+                    string productType = code.Substring(0,2);
+                    if (productType == "PA")
+                    {
+                        Painting painting = new Painting();
+                        painting.Code = code;
+                        painting.Description = xmlIn.ReadElementContentAsString();
+                        painting.Price = xmlIn.ReadElementContentAsDecimal();
+                        painting.Original = xmlIn.ReadElementContentAsBoolean();
+                        painting.Framed = xmlIn.ReadElementContentAsBoolean();
+                        painting.InStock = xmlIn.ReadElementContentAsInt();
+                        products.Add(painting);
+                    }
+                    else if(productType == "PH")
+                    {
+                        Photo photo = new Photo();
+                        photo.Code = code;
+                        photo.Description = xmlIn.ReadElementContentAsString();
+                        photo.Price = xmlIn.ReadElementContentAsDecimal();
+                        photo.Digital = xmlIn.ReadElementContentAsBoolean();
+                        photo.Colour = xmlIn.ReadElementContentAsBoolean();
+                        photo.InStock= xmlIn.ReadElementContentAsInt();
+                        products.Add(photo);
+                    }
                 }
-                while (xmlIn.ReadToNextSibling("Painting"));
-            }
-            if(xmlIn.ReadToDescendant("Photo"))
-            {
-                do
-                {
-                    Photo photo = new Photo();
-                    xmlIn.ReadStartElement("Photo");
-                    photo.Code = xmlIn.ReadElementContentAsString();
-                    photo.Description = xmlIn.ReadElementContentAsString();
-                    photo.Price = xmlIn.ReadElementContentAsDecimal();
-                    photo.Digital = xmlIn.ReadElementContentAsBoolean();
-                    photo.Colour = xmlIn.ReadElementContentAsBoolean();
-                    products.Add(photo);
-                }
-                while (xmlIn.ReadToDescendant("Photo"));
+                while (xmlIn.ReadToNextSibling("Product"));
             }
 
             //Close xmlReader object
