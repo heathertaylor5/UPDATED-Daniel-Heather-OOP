@@ -30,5 +30,7 @@ namespace OliveiraTaylorOOPFinalProject
         //Override the method DisplayInfo
         public override string DisplayInfo() => "Name: " + Name + "\n" + base.DisplayInfo();
 
+        //Overload DisplayInfo
+        public override string DisplayInfo(string sep) => base.DisplayInfo() + sep + "Name: " + Name;
     }
 }
