@@ -115,6 +115,7 @@
             this.txtCardNum.Name = "txtCardNum";
             this.txtCardNum.Size = new System.Drawing.Size(227, 22);
             this.txtCardNum.TabIndex = 7;
+            this.txtCardNum.Tag = "Last4Digits";
             this.txtCardNum.Visible = false;
             // 
             // lblCardNum
