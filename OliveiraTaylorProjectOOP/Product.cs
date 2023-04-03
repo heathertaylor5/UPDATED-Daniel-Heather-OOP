@@ -1,12 +1,14 @@
 ﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OliveiraTaylorProjectOOP
+namespace OliveiraTaylorOOPFinalProject
 {
+    //Add list of products
     public abstract class Product
     {
         //Properties
@@ -27,12 +29,18 @@ namespace OliveiraTaylorProjectOOP
 
         //Methods
         /*Name: DisplayInfo
-         *Sent: Product
+         *Sent: None
          *Returned: String
          *This method displays product information in the specified format*/
         public virtual string DisplayInfo()
-            => String.Format("{0,-8}{1,-15}{2,-7:c}{3,4},Code, Description, Price, Instock");
+            => String.Format("{0,-8}{1,-25}", Code, Description);
 
+        /*Name: DisplayCart
+         *Sent: None
+         *Returned: String
+         *This method displays product information in the format for the cart*/
+        public string DisplayCart()
+            => String.Format("{0,-25}{1,6:c}", Code, Price);
         //Operator Overloading
 
         //Mathmatical Operators
@@ -63,7 +71,7 @@ namespace OliveiraTaylorProjectOOP
 
             if (inventory > 0)
             {
-                int newInventory = product.InStock - inventory;
+                int newInventory = product.InStock + inventory;
                 product.InStock = newInventory;
                 inventoryAdded = true;
             }
@@ -77,8 +85,20 @@ namespace OliveiraTaylorProjectOOP
          *Adds a new product to the product list*/
         public static bool operator + (List<Product> productList, Product product)
         {
-            bool productAdded = false;
-
+            bool productAdded = true;
+            //check if the product being added is equal to any in the list
+            foreach(Product product1 in productList)
+            {
+                bool equal = product.Equals(product1);
+                if (product.Equals(product1))
+                {
+                    //if equal, return false and break out of loop
+                    productAdded = false;
+                    break;
+                }
+            }
+            //return boolean for whether the product was added or not
+            productList.Add(product);
             return productAdded;
         }
 
@@ -89,7 +109,10 @@ namespace OliveiraTaylorProjectOOP
         public static bool operator == (Product existingProduct, Product newProduct) 
         {
             bool equals = false;
-
+            if (existingProduct.Code == newProduct.Code && existingProduct.Description == newProduct.Description)
+            {
+                equals = true;
+            }
             return equals;
         }
 
@@ -98,36 +121,36 @@ namespace OliveiraTaylorProjectOOP
          *Return: bool
          *Checks that the product codes and descriptions are unique*/
         public static bool operator !=(Product existingProduct, Product newProduct)
-        {
-            bool equals = false;
-
-            return equals;
-        }
+            => !(existingProduct == newProduct);
+        
 
         /*Operator: EqualsTo
          *Sent: Product, Product
          *Return: bool
          *Checks that the product codes and descriptions are unique*/
-        public static bool Equals(Product existingProduct, Product newProduct)
+        public override bool Equals(Object product)
         {
             bool equals = false;
-
+            Product p = (Product)product;
+            if (Code == p.Code && Description == p.Description)
+                return true;
             return equals;
         }
 
         /*Operator: GetHashCode
-         *Sent: Product, Product
-         *Return: bool
-         *Checks that the product codes and descriptions are unique*/
+         *Sent: None
+         *Return: int
+         *Returns a unique hash code for the current item*/
         public override int GetHashCode()
         {
-            int code = 0;
-
-            return code;
+            string hashString = Code + GetType().Name + Description + Price;
+            return hashString.GetHashCode();
         }
 
-    }
+    }//END PRODUCT
 
+
+    //START PHOTO CLASS
     public sealed class Photo : Product
     {
         //Properties
@@ -150,9 +173,11 @@ namespace OliveiraTaylorProjectOOP
          *Returned: String
          *This is overridden from the base class - adds additional information*/
         public override string DisplayInfo()
-            =>GetType().Name + base.DisplayInfo() + Digital + " " + Colour;
-    }
+            => base.DisplayInfo() + String.Format("{0,-15}{1,20}{2,15:c}{3,10}",
+                ("Digital: " + Digital), ("Colour: " + Colour), Price, InStock);
+    } //END PHOTO
 
+    //START PAINTING CLASS
     public sealed class Painting : Product
     {
         //Properties
@@ -175,7 +200,8 @@ namespace OliveiraTaylorProjectOOP
          *Returned: String
          *This is overridden from the base class - adds additional information*/
         public override string DisplayInfo()
-            =>GetType().Name + base.DisplayInfo() + "Orignal: " + Original + "Framed: " + Framed;
-        
-    }
+            => base.DisplayInfo() + String.Format("{0,20}{1,20}{2,15:c}{3,10}",
+                ("Original: " + Original), ("Framed: " + Framed), Price, InStock);
+
+    }//END PAINTING
 }
