@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Classy
+namespace OliveiraTaylorOOPFinalProject
 {
     public static class Validator
 	{
@@ -49,7 +49,7 @@ namespace Classy
             }
         }
 
-		// The IsInt32 and IsWithinRange methods were omitted from figure 12-15.
+		// Checks that the textbox has an int
 		public static bool IsInt32(TextBox textBox)
 		{
             int number = 0;
@@ -63,19 +63,6 @@ namespace Classy
                 textBox.Focus();
                 return false;
             }
-		}
-
-		public static bool IsWithinRange(TextBox textBox, decimal min, decimal max)
-		{
-			decimal number = Convert.ToDecimal(textBox.Text);
-			if (number < min || number > max)
-			{
-				MessageBox.Show(textBox.Tag + " must be between " + min
-					+ " and " + max + ".", Title);
-				textBox.Focus();
-				return false;
-			}
-			return true;
 		}
 	}
 }

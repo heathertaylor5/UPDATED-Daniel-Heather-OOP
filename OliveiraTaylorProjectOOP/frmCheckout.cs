@@ -63,7 +63,7 @@ namespace OliveiraTaylorOOPFinalProject
             {
                 //If the user chose a credit Card, check that they inputted the last 4 digits of the card
                 //Display a message if not
-                if(txtCardNum.Text.Length != 4 &&
+                if(txtCardNum.Text.Length != 4 && Validator.IsInt32(txtCardNum) &&
                     (cboPaymentMethod.SelectedItem.ToString() == "AMEX" || 
                     cboPaymentMethod.SelectedItem.ToString() == "MasterCard" ||
                     cboPaymentMethod.SelectedItem.ToString() == "Visa") 
