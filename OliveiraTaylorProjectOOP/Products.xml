@@ -4,52 +4,80 @@
 		<Code>PA123</Code>
 		<Description>Ducks Painting</Description>
 		<Price>123.89</Price>
-		<Original>True</Original>
-		<Frame>True</Frame>
+		<Original>true</Original>
+		<Framed>true</Framed>
+		<InStock>10</InStock>
 	</Product>
 	<Product>
 		<Code>PA234</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Cat Painting</Description>
+		<Price>480.00</Price>
+		<Original>false</Original>
+		<Framed>true</Framed>
+		<InStock>1</InStock>
 	</Product>
 	<Product>
 		<Code>PA345</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Fish Painting</Description>
+		<Price>68.00</Price>
+		<Original>true</Original>
+		<Framed>false</Framed>
+		<InStock>5</InStock>
 	</Product>
 	<Product>
 		<Code>PA456</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Owl Painting</Description>
+		<Price>110.00</Price>
+		<Original>false</Original>
+		<Framed>true</Framed>
+		<InStock>4</InStock>
 	</Product>
 	<Product>
 		<Code>PA567</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Wizard Painting</Description>
+		<Price>280.00</Price>
+		<Original>true</Original>
+		<Framed>false</Framed>
+		<InStock>2</InStock>
 	</Product>
 	<Product>
 		<Code>PH123</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Flower Photo</Description>
+		<Price>40.00</Price>
+		<Digital>false</Digital>
+		<Colour>true</Colour>
+		<InStock>20</InStock>
 	</Product>
 	<Product>
 		<Code>PH234</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Waterfall Photo</Description>
+		<Price>26.98</Price>
+		<Digital>false</Digital>
+		<Colour>true</Colour>
+		<InStock>5</InStock>
 	</Product>
 	<Product>
 		<Code>PH345</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Clown Photo</Description>
+		<Price>1.00</Price>
+		<Digital>false</Digital>
+		<Colour>false</Colour>
+		<InStock>100</InStock>
 	</Product>
 	<Product>
 		<Code>PH456</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Ballet Photo</Description>
+		<Price>112.88</Price>
+		<Digital>true</Digital>
+		<Colour>false</Colour>
+		<InStock>4</InStock>
 	</Product>
 	<Product>
 		<Code>PH567</Code>
-		<Description></Description>
-		<Price></Price>
+		<Description>Cat Photo</Description>
+		<Price>999.99</Price>
+		<Digital>false</Digital>
+		<Colour>true</Colour>
+		<InStock>1</InStock>
 	</Product>
 </Products>
