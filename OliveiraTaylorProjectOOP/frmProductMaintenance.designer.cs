@@ -41,6 +41,7 @@
             this.nudNumStock = new System.Windows.Forms.NumericUpDown();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.btnGenerateReport = new System.Windows.Forms.Button();
+            this.sfdInventoryReport = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.grpUpdateStock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumStock)).BeginInit();
@@ -66,6 +67,7 @@
             this.lstAllProducts.Name = "lstAllProducts";
             this.lstAllProducts.Size = new System.Drawing.Size(549, 420);
             this.lstAllProducts.TabIndex = 4;
+            this.lstAllProducts.SelectedIndexChanged += new System.EventHandler(this.lstAllProducts_SelectedIndexChanged);
             // 
             // btnAddNewItem
             // 
@@ -76,6 +78,7 @@
             this.btnAddNewItem.TabIndex = 5;
             this.btnAddNewItem.Text = "Add New Item";
             this.btnAddNewItem.UseVisualStyleBackColor = true;
+            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
             // 
             // grpUpdateStock
             // 
@@ -104,6 +107,7 @@
             this.btnRemoveStock.TabIndex = 6;
             this.btnRemoveStock.Text = "Remove Stock";
             this.btnRemoveStock.UseVisualStyleBackColor = true;
+            this.btnRemoveStock.Click += new System.EventHandler(this.btnRemoveStock_Click);
             // 
             // lblInStock
             // 
@@ -169,8 +173,15 @@
             this.btnGenerateReport.TabIndex = 7;
             this.btnGenerateReport.Text = "Generate Report";
             this.btnGenerateReport.UseVisualStyleBackColor = true;
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
             // 
-            // ProductMaintenance
+            // sfdInventoryReport
+            // 
+            this.sfdInventoryReport.DefaultExt = "txt";
+            this.sfdInventoryReport.FileName = "InventoryReport.txt";
+            this.sfdInventoryReport.InitialDirectory = "c:\\files";
+            // 
+            // frmProductMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,7 +192,7 @@
             this.Controls.Add(this.lstAllProducts);
             this.Controls.Add(this.pictureBox2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ProductMaintenance";
+            this.Name = "frmProductMaintenance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductMaintenance";
             this.Load += new System.EventHandler(this.ProductMaintenance_Load);
@@ -207,5 +218,6 @@
         private System.Windows.Forms.NumericUpDown nudNumStock;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Button btnGenerateReport;
+        private System.Windows.Forms.SaveFileDialog sfdInventoryReport;
     }
 }

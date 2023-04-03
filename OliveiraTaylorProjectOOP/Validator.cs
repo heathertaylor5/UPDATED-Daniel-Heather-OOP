@@ -23,6 +23,7 @@ namespace Classy
 			}
 		}
 
+		//Check that text boxes have content
 		public static bool IsPresent(TextBox textBox)
 		{
 			if (textBox.Text == "")
@@ -34,6 +35,7 @@ namespace Classy
 			return true;
 		}
 
+		//Check that values are decimal
 		public static bool IsDecimal(TextBox textBox)
         {
             decimal number = 0m;
@@ -49,7 +51,7 @@ namespace Classy
             }
         }
 
-		// The IsInt32 and IsWithinRange methods were omitted from figure 12-15.
+		//Check that values are integers
 		public static bool IsInt32(TextBox textBox)
 		{
             int number = 0;
@@ -65,17 +67,21 @@ namespace Classy
             }
 		}
 
-		public static bool IsWithinRange(TextBox textBox, decimal min, decimal max)
+		//Check if boolean
+		public static bool IsBoolean(TextBox textBox)
 		{
-			decimal number = Convert.ToDecimal(textBox.Text);
-			if (number < min || number > max)
+			bool result = false;
+			bool boolResult;
+			if(Boolean.TryParse(textBox.Text, out boolResult)) 
 			{
-				MessageBox.Show(textBox.Tag + " must be between " + min
-					+ " and " + max + ".", Title);
-				textBox.Focus();
-				return false;
+				result = true;
 			}
-			return true;
+			else
+			{
+                MessageBox.Show(textBox.Tag + " must be a boolean.", Title);
+                textBox.Focus();
+            }
+			return result;
 		}
 	}
 }

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OliveiraTaylorOOPFinalProject
 {
@@ -90,10 +91,12 @@ namespace OliveiraTaylorOOPFinalProject
             foreach(Product product1 in productList)
             {
                 bool equal = product.Equals(product1);
-                if (product.Equals(product1))
+                if (product == product1)
                 {
                     //if equal, return false and break out of loop
                     productAdded = false;
+                    MessageBox.Show("Cannot add a product with the same code or " +
+                        "description as an already existing product", "Error");
                     break;
                 }
             }

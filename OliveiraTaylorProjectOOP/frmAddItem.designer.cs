@@ -110,16 +110,16 @@
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Code";
-            this.label1.Visible = false;
             // 
             // txtCode
             // 
             this.txtCode.Location = new System.Drawing.Point(100, 37);
             this.txtCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCode.MaxLength = 3;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(100, 22);
             this.txtCode.TabIndex = 2;
-            this.txtCode.Visible = false;
+            this.txtCode.Tag = "Code";
             // 
             // txtPrice
             // 
@@ -128,7 +128,7 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(100, 22);
             this.txtPrice.TabIndex = 4;
-            this.txtPrice.Visible = false;
+            this.txtPrice.Tag = "Price";
             // 
             // label2
             // 
@@ -138,7 +138,6 @@
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Price";
-            this.label2.Visible = false;
             // 
             // txtDescription
             // 
@@ -147,7 +146,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(100, 22);
             this.txtDescription.TabIndex = 6;
-            this.txtDescription.Visible = false;
+            this.txtDescription.Tag = "Description";
             // 
             // label3
             // 
@@ -157,7 +156,6 @@
             this.label3.Size = new System.Drawing.Size(75, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Description";
-            this.label3.Visible = false;
             // 
             // txtNumInStock
             // 
@@ -166,7 +164,7 @@
             this.txtNumInStock.Name = "txtNumInStock";
             this.txtNumInStock.Size = new System.Drawing.Size(100, 22);
             this.txtNumInStock.TabIndex = 8;
-            this.txtNumInStock.Visible = false;
+            this.txtNumInStock.Tag = "InStock";
             // 
             // label4
             // 
@@ -176,7 +174,6 @@
             this.label4.Size = new System.Drawing.Size(85, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Num in Stock";
-            this.label4.Visible = false;
             // 
             // txtDigitalOriginal
             // 
@@ -185,7 +182,7 @@
             this.txtDigitalOriginal.Name = "txtDigitalOriginal";
             this.txtDigitalOriginal.Size = new System.Drawing.Size(100, 22);
             this.txtDigitalOriginal.TabIndex = 10;
-            this.txtDigitalOriginal.Visible = false;
+            this.txtDigitalOriginal.Tag = "Photo:Digital/Painting:Original";
             // 
             // lblDigitalOriginal
             // 
@@ -195,7 +192,6 @@
             this.lblDigitalOriginal.Size = new System.Drawing.Size(44, 16);
             this.lblDigitalOriginal.TabIndex = 9;
             this.lblDigitalOriginal.Text = "label5";
-            this.lblDigitalOriginal.Visible = false;
             // 
             // txtColourFrame
             // 
@@ -204,7 +200,7 @@
             this.txtColourFrame.Name = "txtColourFrame";
             this.txtColourFrame.Size = new System.Drawing.Size(100, 22);
             this.txtColourFrame.TabIndex = 12;
-            this.txtColourFrame.Visible = false;
+            this.txtColourFrame.Tag = "Photo:Colour/Painting:Framed";
             // 
             // lblColourFrame
             // 
@@ -214,7 +210,6 @@
             this.lblColourFrame.Size = new System.Drawing.Size(44, 16);
             this.lblColourFrame.TabIndex = 11;
             this.lblColourFrame.Text = "label6";
-            this.lblColourFrame.Visible = false;
             // 
             // grpProductInfo
             // 
@@ -239,6 +234,7 @@
             this.grpProductInfo.TabIndex = 13;
             this.grpProductInfo.TabStop = false;
             this.grpProductInfo.Text = "New Product Info";
+            this.grpProductInfo.Visible = false;
             // 
             // btnAddItem
             // 
@@ -249,6 +245,7 @@
             this.btnAddItem.TabIndex = 13;
             this.btnAddItem.Text = "Add Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // pictureBox2
             // 
@@ -261,7 +258,7 @@
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // AddItem
+            // frmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -270,7 +267,7 @@
             this.Controls.Add(this.grpProductInfo);
             this.Controls.Add(this.grpProductType);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "AddItem";
+            this.Name = "frmAddItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddItem";
             this.Load += new System.EventHandler(this.AddItem_Load);
