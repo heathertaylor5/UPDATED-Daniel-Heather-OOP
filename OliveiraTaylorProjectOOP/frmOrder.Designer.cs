@@ -138,6 +138,7 @@
             // 
             // grpInventory
             // 
+            this.grpInventory.Controls.Add(this.grpPhotos);
             this.grpInventory.Controls.Add(this.label4);
             this.grpInventory.Controls.Add(this.label3);
             this.grpInventory.Controls.Add(this.grpPaintings);
@@ -174,13 +175,12 @@
             // 
             // grpPaintings
             // 
-            this.grpPaintings.Controls.Add(this.grpPhotos);
             this.grpPaintings.Controls.Add(this.pictureBox6);
             this.grpPaintings.Controls.Add(this.pictureBox5);
             this.grpPaintings.Controls.Add(this.pictureBox4);
             this.grpPaintings.Controls.Add(this.pictureBox3);
             this.grpPaintings.Controls.Add(this.pictureBox1);
-            this.grpPaintings.Location = new System.Drawing.Point(10, 21);
+            this.grpPaintings.Location = new System.Drawing.Point(11, 20);
             this.grpPaintings.Name = "grpPaintings";
             this.grpPaintings.Size = new System.Drawing.Size(547, 126);
             this.grpPaintings.TabIndex = 7;
@@ -194,7 +194,7 @@
             this.grpPhotos.Controls.Add(this.pictureBox9);
             this.grpPhotos.Controls.Add(this.pictureBox10);
             this.grpPhotos.Controls.Add(this.pictureBox11);
-            this.grpPhotos.Location = new System.Drawing.Point(6, 0);
+            this.grpPhotos.Location = new System.Drawing.Point(11, 20);
             this.grpPhotos.Name = "grpPhotos";
             this.grpPhotos.Size = new System.Drawing.Size(547, 126);
             this.grpPhotos.TabIndex = 8;

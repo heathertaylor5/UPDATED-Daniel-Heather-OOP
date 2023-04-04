@@ -90,7 +90,6 @@ namespace OliveiraTaylorOOPFinalProject
             //check if the product being added is equal to any in the list
             foreach(Product product1 in productList)
             {
-                bool equal = product.Equals(product1);
                 if (product == product1)
                 {
                     //if equal, return false and break out of loop
@@ -112,7 +111,7 @@ namespace OliveiraTaylorOOPFinalProject
         public static bool operator == (Product existingProduct, Product newProduct) 
         {
             bool equals = false;
-            if (existingProduct.Code == newProduct.Code && existingProduct.Description == newProduct.Description)
+            if (existingProduct.Code == newProduct.Code || existingProduct.Description == newProduct.Description)
             {
                 equals = true;
             }

@@ -90,14 +90,12 @@ namespace OliveiraTaylorOOPFinalProject
             //Photo
             if(productType == "PH")
             {
-                grpPaintings.Hide();
                 grpPhotos.Show();
             }
             //Painting
             else if(productType == "PA")
             {
                 grpPhotos.Hide();
-                grpPaintings.Show();
             }
         }
 
